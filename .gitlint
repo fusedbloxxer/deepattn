@@ -1,0 +1,10 @@
+[general]
+# Use conventional commits
+contrib=contrib-title-conventional-commits
+
+# Do not enforce body in commit message
+ignore=B6
+
+[contrib-title-conventional-commits]
+# Restrict types for conventional commits
+types = fix,feat,chore,docs,refactor

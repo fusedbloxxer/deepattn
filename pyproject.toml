@@ -1,0 +1,50 @@
+[project]
+name = "deepattn"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = []
+
+[tool.uv.workspace]
+members = ["workspaces/*"]
+
+[tool.uv.sources]
+vitlab = { workspace = true }
+stanformer = { workspace = true }
+
+[[tool.uv.index]]
+explicit = true
+name = "torch-cuda"
+url = "https://download.pytorch.org/whl/cu128"
+
+[tool.ruff]
+indent-width = 4
+line-length = 224
+include = ["pyproject.toml", "*.py", "*.ipynb"]
+
+[tool.ruff.lint]
+extend-select = ["ICN", "I"]
+extend-fixable = ["ICN", "I"]
+
+[tool.ruff.format]
+line-ending = "lf"
+quote-style = "double"
+indent-style = "space"
+
+[tool.ruff.lint.isort]
+order-by-type = true
+lines-between-types = 1
+lines-after-imports = 2
+force-wrap-aliases = true
+known-local-folder = ["flow_*"]
+
+[tool.ruff.lint.flake8-import-conventions.extend-aliases]
+"torch.nn.functional" = "F"
+"numpy.typing" = "npt"
+albumentations = "A"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
+[dependency-groups]
+dev = ["gitlint>=0.19.1", "pre-commit>=4.2.0", "ruff>=0.12.5"]
