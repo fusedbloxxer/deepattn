@@ -9,7 +9,6 @@ members = ["workspaces/*"]
 
 [tool.uv.sources]
 vitlab = { workspace = true }
-stanformer = { workspace = true }
 
 [[tool.uv.index]]
 explicit = true
