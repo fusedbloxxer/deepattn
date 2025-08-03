@@ -9,6 +9,8 @@ members = ["workspaces/*"]
 
 [tool.uv.sources]
 vitlab = { workspace = true }
+torch = { index = "torch-cuda" }
+torchvision = { index = "torch-cuda" }
 
 [[tool.uv.index]]
 explicit = true
